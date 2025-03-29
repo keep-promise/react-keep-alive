@@ -32,7 +32,6 @@
   "homepage": "https://github.com/keep-promise/async-loader#readme",
   "devDependencies": {
     "@types/react": "^19.0.12",
-    "react": "^19.1.0",
-    "tslib": "^2.6.2"
+    "react": "^19.1.0"
   }
 }

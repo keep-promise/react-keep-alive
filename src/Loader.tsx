@@ -6,7 +6,7 @@ interface IProps {
   children: ReactNode;
 }
 
-export const KeepAlive: FC<IProps> = (props) => {
+export const Loader: FC<IProps> = (props) => {
   const { visible, children } = props;
   const promiseRef = useRef<Promise<void> | null>(null);
   const resolveRef = useRef<(() => void) | null>(null);
@@ -21,7 +21,7 @@ export const KeepAlive: FC<IProps> = (props) => {
   // effect
   useEffect(() => () => resolvePromise(true), []);
 
-  if (mode === "hidden") {
+  if (!visible) {
     if (resolveRef.current === null) {
       promiseRef.current = new Promise<void>(
         (resolve) => (resolveRef.current = resolve),
@@ -38,5 +38,5 @@ export const KeepAlive: FC<IProps> = (props) => {
 
   resolvePromise();
 
-  return children;
+  return <>{ children }</>;
 };
