@@ -1,4 +1,5 @@
 import { ReactNode, Suspense } from "react";
+import Loader from "./Loader";
 
 interface IProps {
   visible: boolean;

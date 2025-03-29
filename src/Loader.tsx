@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import type { FC, ReactNode } from "react";
 
 interface IProps {
@@ -6,20 +6,20 @@ interface IProps {
   children: ReactNode;
 }
 
-export const Loader: FC<IProps> = (props) => {
+const Loader: FC<IProps> = (props) => {
   const { visible, children } = props;
-  const promiseRef = useRef<Promise<void> | null>(null);
-  const resolveRef = useRef<(() => void) | null>(null);
+  const promiseRef = useRef<Promise<void>>(null);
+  const resolveRef = useRef<() => void>(null);
 
   const resolvePromise = () => {
     if (visible) {
-      resolveRef.current();
+      resolveRef.current?.();
       resolveRef.current = null;
       promiseRef.current = null;
     }
   };
-  // effect
-  useEffect(() => () => resolvePromise(true), []);
+
+  useEffect(() => () => resolvePromise(), []);
 
   if (!visible) {
     if (resolveRef.current === null) {
@@ -28,15 +28,13 @@ export const Loader: FC<IProps> = (props) => {
       );
     }
 
-    const promise = promiseRef.current!;
-    if ("use" in React && typeof React.use === "function") {
-      (React.use as <T>(primise: Promise<T>) => T)(promise);
-    } else {
-      throw promise;
-    }
+    const promise = promiseRef.current;
+    throw promise;
   }
 
   resolvePromise();
 
   return <>{ children }</>;
 };
+
+export default Loader;
