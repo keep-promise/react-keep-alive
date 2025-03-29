@@ -1,0 +1,38 @@
+{
+  "name": "react-keep-alive",
+  "version": "1.0.0",
+  "description": "react keep alive",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "types/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": "./esm/index.js"
+  },
+  "files": [
+    "lib",
+    "esm",
+    "types"
+  ],
+  "scripts": {
+    "build": "npm run cjs && npm run esm",
+    "cjs": "rm -rf ./lib && tsc -p tsconfig.cjs.json",
+    "esm": "rm -rf ./esm && rm -rf types && tsc -p tsconfig.esm.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keep-promise/async-loader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keep-promise/async-loader/issues"
+  },
+  "homepage": "https://github.com/keep-promise/async-loader#readme",
+  "devDependencies": {
+    "@types/react": "^19.0.12",
+    "react": "^19.1.0",
+    "tslib": "^2.6.2"
+  }
+}
