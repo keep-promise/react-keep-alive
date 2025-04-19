@@ -5,6 +5,7 @@ specifiers:
   '@types/react': ^19.0.12
   '@vitejs/plugin-react': ^4.4.0
   path: ^0.12.7
+  r-keep-alive: ^1.0.0
   react: ^19.1.0
   react-dom: ^19.1.0
   vite: ^6.3.2
@@ -14,6 +15,7 @@ devDependencies:
   '@types/react': 19.1.2
   '@vitejs/plugin-react': 4.4.0_vite@6.3.2
   path: 0.12.7
+  r-keep-alive: 1.0.0
   react: 19.1.0
   react-dom: 19.1.0_react@19.1.0
   vite: 6.3.2_@types+node@22.14.1
@@ -849,6 +851,10 @@ packages:
   /process/0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
+    dev: true
+
+  /r-keep-alive/1.0.0:
+    resolution: {integrity: sha512-7xkExznLwXTiVeolfJFo3RcyfG4ngnOlyLmVO5iZj+ZERn93FPWSxXVR/JdQx+YKObkS3NAuCZ9J3tMc2MjUTg==}
     dev: true
 
   /react-dom/19.1.0_react@19.1.0:

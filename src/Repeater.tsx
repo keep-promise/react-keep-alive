@@ -9,7 +9,7 @@ interface IProps {
 const Repeater = (props: IProps) => {
   const { visible, children } = props;
 
-  if (visible) {
+  if (!visible) {
     throw Promise.reject();
   }
 

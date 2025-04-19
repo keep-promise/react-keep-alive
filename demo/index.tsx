@@ -1,6 +1,6 @@
 import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
-import KeepAlive from '../src'
+import KeepAlive from 'r-keep-alive';
 
 const App = () => {
   const [state, setstate] = useState(1)

@@ -32,6 +32,7 @@
     "@types/react": "^19.0.12",
     "@vitejs/plugin-react": "^4.4.0",
     "path": "^0.12.7",
+    "r-keep-alive": "^1.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "vite": "^6.3.2"
