@@ -1,5 +1,5 @@
 import { ReactNode, Suspense } from "react";
-import Loader from "./Loader";
+import Repeater from "./Repeater";
 
 interface IProps {
   visible: boolean;
@@ -10,7 +10,7 @@ const KeepAlive = (props: IProps) => {
   const { visible, children } = props;
   return (
     <Suspense fallback={null}>
-      <Loader visible={visible}>{children}</Loader>
+      <Repeater visible={visible}>{children}</Repeater>
     </Suspense>
   );
 }
