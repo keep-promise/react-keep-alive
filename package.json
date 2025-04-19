@@ -1,5 +1,5 @@
 {
-  "name": "react-keep-alive",
+  "name": "r-keep-alive",
   "version": "1.0.0",
   "description": "react keep alive",
   "main": "lib/index.js",
