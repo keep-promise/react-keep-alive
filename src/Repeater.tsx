@@ -8,13 +8,15 @@ interface IProps {
 
 const Repeater = (props: IProps) => {
   const { visible, children } = props;
-  const resolveRef = useRef <() => void>(null);
+  const resolveRef = useRef <(...args: any) => any>(null);
 
   if (visible) {
     resolveRef.current?.();
     resolveRef.current = null;
   } else {
-    throw new Promise((resolve) => resolveRef.current = resolve)
+    throw new Promise((resolve) => {
+      resolveRef.current = resolve
+    })
   }
 
   return <>{children}</>;
