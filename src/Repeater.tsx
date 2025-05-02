@@ -1,5 +1,5 @@
-import { useRef, useEffect } from "react";
-import type { FC, ReactNode } from "react";
+import { useRef } from "react";
+import type { ReactNode } from "react";
 
 interface IProps {
   visible: boolean;
@@ -8,9 +8,13 @@ interface IProps {
 
 const Repeater = (props: IProps) => {
   const { visible, children } = props;
+  const resolveRef = useRef <() => void>(null);
 
-  if (!visible) {
-    throw Promise.reject();
+  if (visible) {
+    resolveRef.current?.();
+    resolveRef.current = null;
+  } else {
+    throw new Promise((resolve) => resolveRef.current = resolve)
   }
 
   return <>{children}</>;
