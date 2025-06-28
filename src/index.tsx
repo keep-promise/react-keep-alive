@@ -11,7 +11,7 @@ interface IKeepAliveContext {
   unmount?: () => void;
 }
 
-const KeepAliveContext = createContext<IKeepAliveContext>({});
+export const KeepAliveContext = createContext<IKeepAliveContext>({});
 
 const KeepAlive = (props: IProps) => {
   const { visible, children } = props;
